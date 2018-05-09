@@ -1,16 +1,38 @@
-1525784215982	geckodriver	INFO	Listening on 127.0.0.1:49247
-1525784216499	mozprofile::profile	INFO	Using profile path C:\Users\luyuhao\AppData\Local\Temp\rust_mozprofile.fpkr0DnzYKp3
-1525784216501	geckodriver::marionette	INFO	Starting browser D:\Firefox\firefox.exe with args []
-1525784216504	geckodriver::marionette	INFO	Connecting to Marionette on localhost:49252
-1525784217012	Marionette	INFO	Enabled via --marionette
-1525784218472	Marionette	INFO	Listening on port 49252
+1525835579072	geckodriver	INFO	Listening on 127.0.0.1:59473
+1525835579575	mozprofile::profile	INFO	Using profile path C:\Users\luyuhao\AppData\Local\Temp\rust_mozprofile.k9xpJ2DSSNZX
+1525835579577	geckodriver::marionette	INFO	Starting browser D:\Firefox\firefox.exe with args []
+1525835579656	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59478
+1525835580210	Marionette	INFO	Enabled via --marionette
+1525835581388	Marionette	INFO	Listening on port 59478
+Unable to read VR Path Registry from C:\Users\luyuhao\AppData\Local\openvr\openvrpaths.vrpathUnable to read VR Path Registry from C:\Users\luyuhao\AppData\Local\openvr\openvrpaths.vrpath
+JavaScript error: chrome://browser/content/browser.js, line 6667: TypeError: cannot use the given object as a weak map key
+JavaScript error: chrome://browser/content/browser.js, line 6667: TypeError: cannot use the given object as a weak map key
 Unable to read VR Path Registry from C:\Users\luyuhao\AppData\Local\openvr\openvrpaths.vrpath
-[Child 5320, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
-n", "idle", "notifications"], be one of ["bookmarks"], be one of ["find"], be one of ["history"], be one of ["activeTab", "tabs", "tabHide"], be one of ["browserSettings"], be one of ["cookies"], be one of ["topSites"], be one of ["webNavigation"], or be one of ["webRequest", "webRequestBlocking"]], be one of ["alarms", "mozillaAddons", "storage", "unlimitedStorage"], be one of ["browsingData"], be one of ["devtools"], be one of ["identity"], be one of ["menus", "contextMenus"], be one of ["pkcs11"], be one of ["geckoProfiler"], be one of ["sessions"], be one of ["contextualIdentities"], be one of ["downloads", "downloads.open"], be one of ["management"], be one of ["privacy"], be one of ["proxy"], be one of ["nativeMessaging"], be one of ["theme"], or match the pattern /^experiments(\.\w+)+$/], or must either [be one of ["<all_urls>"], or must either [match the pattern /^(https?|wss?|file|ftp|\*):\/\/(\*|\*\.[^*/]+|[^*/]+)\/.*$/, or match the pattern /^file:\/\/\/.*$/]]
-1525769188098	addons.webextension.<unknown>	WARN	Loading extension 'null': Reading manifest: Error processing options_page: An unexpected property was found in the WebExtension manifest.
-1525769188098	addons.webextension.<unknown>	WARN	Loading extension 'null': Reading manifest: Error processing offline_enabled: An unexpected property was found in the WebExtension manifest.
-1525769194856	addons.xpi	WARN	Failed to remove temporary file C:\Users\luyuhao\AppData\Local\Temp\tmp-mq5.xpi for addon https://addons.mozilla.org/firefox/downloads/file/948378/katalon_recorder_selenium_ide_for_firefox_55-3.5.5-an+fx-windows.xpi?src=search: [Exception... "Component returned failure code: 0x80520015 (NS_ERROR_FILE_ACCESS_DENIED) [nsIFile.remove]"  nsresult: "0x80520015 (NS_ERROR_FILE_ACCESS_DENIED)"  location: "JS frame :: resource://gre/modules/addons/XPIInstall.jsm :: removeTemporaryFile :: line 1556"  data: no] Stack trace: removeTemporaryFile()@resource://gre/modules/addons/XPIInstall.jsm:1556 < startInstall/<()@resource://gre/modules/addons/XPIInstall.jsm:1911
-1525769194880	addons.webextension.{91f05833-bab1-4fb1-b9e4-187091a4d75d}	WARN	Loading extension '{91f05833-bab1-4fb1-b9e4-187091a4d75d}': Reading manifest: Error processing permissions.12: Value "debugger" must either: must either [must either [be one of ["clipboardRead", "clipboardWrite", "geolocation", "idle", "notifications"], be one of ["bookmarks"], be one of ["find"], be one of ["history"], be one of ["activeTab", "tabs", "tabHide"], be one of ["browserSettings"], be one of ["cookies"], be one of ["topSites"], be one of ["webNavigation"], or be one of ["webRequest", "webRequestBlocking"]], be one of ["alarms", "mozillaAddons", "storage", "unlimitedStorage"], be one of ["browsingData"], be one of ["devtools"], be one of ["identity"], be one of ["menus", "contextMenus"], be one of ["pkcs11"], be one of ["geckoProfiler"], be one of ["sessions"], be one of ["contextualIdentities"], be one of ["downloads", "downloads.open"], be one of ["management"], be one of ["privacy"], be one of ["proxy"], be one of ["nativeMessaging"], be one of ["theme"], or match the pattern /^experiments(\.\w+)+$/], or must either [be one of ["<all_urls>"], or must either [match the pattern /^(https?|wss?|file|ftp|\*):\/\/(\*|\*\.[^*/]+|[^*/]+)\/.*$/, or match the pattern /^file:\/\/\/.*$/]]
+[GPU 13484, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Parent 4744, Gecko_IOThread] WARNING: pipe error: 232: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 513
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+js:80 < shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///D:/Firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:196 < callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4419 < observe()@resource://gre/modules/addons/XPIProvider.jsm:2279 < GeckoDriver.prototype.quit()@driver.js:3270 < despatch()@server.js:557 < execute()@server.js:531 < onPacket/<()@server.js:506 < onPacket()@server.js:505 < _onJSONObjectReady/<()@transport.js:500
+Unable to read VR Path Registry from C:\Users\luyuhao\AppData\Local\openvr\openvrpaths.vrpath
+[Parent 15980, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+6
+[Child 19180, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+p://gkcx.eol.cn/schoolhtm/sysindexFooter.js, line 7: ReferenceError: $ is not defined
+JavaScript error: https://static.eol.cn/gkcx/script/adCount/adCount.js, line 1: ReferenceError: $ is not defined
+JavaScript error: http://gkcx.eol.cn/staticnew/js/commonsearch.js, line 269: ReferenceError: $ is not defined
+JavaScript error: http://gkcx.eol.cn/soudaxue/queryschool.html?page=40, line 554: ReferenceError: $ is not defined
+1525835241304	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+Unable to read VR Path Registry from C:\Users\luyuhao\AppData\Local\openvr\openvrpaths.vrpath
+[Parent 20332, Gecko_IOThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 19276, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+[Child 19276, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+Unable to read VR Path Registry from C:\Users\luyuhao\AppData\Local\openvr\openvrpaths.vrpath
+[GPU 15140, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 346
+
+###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
+
+ ["contextualIdentities"], be one of ["downloads", "downloads.open"], be one of ["management"], be one of ["privacy"], be one of ["proxy"], be one of ["nativeMessaging"], be one of ["theme"], or match the pattern /^experiments(\.\w+)+$/], or must either [be one of ["<all_urls>"], or must either [match the pattern /^(https?|wss?|file|ftp|\*):\/\/(\*|\*\.[^*/]+|[^*/]+)\/.*$/, or match the pattern /^file:\/\/\/.*$/]]
 1525769194882	addons.webextension.{91f05833-bab1-4fb1-b9e4-187091a4d75d}	WARN	Loading extension '{91f05833-bab1-4fb1-b9e4-187091a4d75d}': Reading manifest: Error processing options_page: An unexpected property was found in the WebExtension manifest.
 1525769194882	addons.webextension.{91f05833-bab1-4fb1-b9e4-187091a4d75d}	WARN	Loading extension '{91f05833-bab1-4fb1-b9e4-187091a4d75d}': Reading manifest: Error processing offline_enabled: An unexpected property was found in the WebExtension manifest.
 1525769194916	addons.webextension.{91f05833-bab1-4fb1-b9e4-187091a4d75d}	WARN	Please specify whether you want browser_style or not in your browser_action options.

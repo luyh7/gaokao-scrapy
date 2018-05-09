@@ -2,10 +2,10 @@
 from scrapy.spiders import CrawlSpider
 from scrapy.http import Request
 import config
-class GkcxSpider(CrawlSpider):
-    name = "gkcx"
+class MajorScoreSpider(CrawlSpider):
+    name = "majorscore"
     allowed_domains = ["gkcx.eol.cn"]
-    start_urls = [config.SCHOOL_URL]
+    start_urls = [config.MAJOR_SCORE_URL]
     _x_query = {
         'tbody': '//tbody[contains(@class, "lin-seachtable")]',
     }
@@ -23,28 +23,27 @@ class GkcxSpider(CrawlSpider):
         yield request
 
     def parse_post(self, response):
+        """只会执行一次"""
         sel = response.selector
-        filename = response.url.split("/")[-2]
+        filename = "major_score"
         trs = []
         for i in range(1,config.MAX_ROWS+1):
             tr = ''
-            for j in range(1, config.TD_OF_SCHOOL+1):
-                td = sel.xpath(config.X_QUERY_SCHOOL[j] % (i,j))
+            for j in range(1, config.TD_OF_MAJOR_SCORE + 1):
+                td = sel.xpath(config.X_QUERY_MAJOR_SCORE[j] % (i, j))
                 if not(len(td.extract()) == 0):
                     tr += (td.extract()[0] + '|')
             if tr == '':
                 break
             tr += '\n'
             trs.append(tr)
-        # body = sel.xpath("//table[@id='seachtab']/tbody/tr[2]/td[1]/a/text()").extract()[0]
-        # with open(filename, 'wb') as f:
-        #     f.write(body)
-        # body.encode('utf-8')
+
         print response.url
-        with open(filename, 'a+') as fout:
+        # 清空并写入文件
+        with open(filename, 'w+') as fout:
             fout.writelines(trs)
 
-        for i in range(2, config.MAX_SCHOOL_PAGES):
+        for i in range(2, config.MAX_MAJOR_SCORE_PAGES):
             request = Request(url=response.url + ('?page=%d' % i), callback=self.parse_single, dont_filter=True)
             request.meta['PhantomJS'] = False
             request.meta['SinglePage'] = True
@@ -52,22 +51,18 @@ class GkcxSpider(CrawlSpider):
 
     def parse_single(self, response):
         sel = response.selector
-        filename = response.url.split("/")[-2]
+        filename = "major_score"
         trs = []
         for i in range(1,config.MAX_ROWS+1):
             tr = ''
-            for j in range(1, config.TD_OF_SCHOOL+1):
-                td = sel.xpath(config.X_QUERY_SCHOOL[j] % (i,j))
+            for j in range(1, config.TD_OF_MAJOR_SCORE+1):
+                td = sel.xpath(config.X_QUERY_MAJOR_SCORE[j] % (i,j))
                 if not(len(td.extract()) == 0):
                     tr += (td.extract()[0] + '|')
             if tr == '':
                 break
             tr += '\n'
             trs.append(tr)
-        # body = sel.xpath("//table[@id='seachtab']/tbody/tr[2]/td[1]/a/text()").extract()[0]
-        # with open(filename, 'wb') as f:
-        #     f.write(body)
-        # body.encode('utf-8')
-        print response.url
+        # print response.url
         with open(filename, 'a+') as fout:
             fout.writelines(trs)
