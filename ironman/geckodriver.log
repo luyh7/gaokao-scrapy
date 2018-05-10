@@ -1,10 +1,11 @@
-1525835579072	geckodriver	INFO	Listening on 127.0.0.1:59473
-1525835579575	mozprofile::profile	INFO	Using profile path C:\Users\luyuhao\AppData\Local\Temp\rust_mozprofile.k9xpJ2DSSNZX
-1525835579577	geckodriver::marionette	INFO	Starting browser D:\Firefox\firefox.exe with args []
-1525835579656	geckodriver::marionette	INFO	Connecting to Marionette on localhost:59478
-1525835580210	Marionette	INFO	Enabled via --marionette
-1525835581388	Marionette	INFO	Listening on port 59478
-Unable to read VR Path Registry from C:\Users\luyuhao\AppData\Local\openvr\openvrpaths.vrpathUnable to read VR Path Registry from C:\Users\luyuhao\AppData\Local\openvr\openvrpaths.vrpath
+1525954102060	geckodriver	INFO	Listening on 127.0.0.1:63199
+1525954102571	mozprofile::profile	INFO	Using profile path C:\Users\luyuhao\AppData\Local\Temp\rust_mozprofile.GTy108tYNecg
+1525954102573	geckodriver::marionette	INFO	Starting browser D:\Firefox\firefox.exe with args ["-headless", "--disable-gpu"]
+1525954102575	geckodriver::marionette	INFO	Connecting to Marionette on localhost:63204
+*** You are running in headless mode.
+1525954103072	Marionette	INFO	Enabled via --marionette
+1525954104428	Marionette	INFO	Listening on port 63204
+\openvr\openvrpaths.vrpathUnable to read VR Path Registry from C:\Users\luyuhao\AppData\Local\openvr\openvrpaths.vrpath
 JavaScript error: chrome://browser/content/browser.js, line 6667: TypeError: cannot use the given object as a weak map key
 JavaScript error: chrome://browser/content/browser.js, line 6667: TypeError: cannot use the given object as a weak map key
 Unable to read VR Path Registry from C:\Users\luyuhao\AppData\Local\openvr\openvrpaths.vrpath

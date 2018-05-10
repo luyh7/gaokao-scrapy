@@ -12,11 +12,16 @@ class MyDriver(object):
 
     def __new__(cls, *args, **kw):
         if not cls.__instance:
-            service_args = []
+            # service_args = []
             service_args.append('--load-images=no')  ##关闭图片加载
             service_args.append('--disk-cache=yes')  ##开启缓存
             service_args.append('--ignore-ssl-errors=true')  ##忽略https错误
-            MyDriver.__instance = webdriver.PhantomJS(service_args=service_args)
+            driver = webdriver.PhantomJS(service_args=service_args)
+
+            # driver.implicitly_wait(10)  ##设置隐式等待
+            # driver.set_page_load_timeout(10)  ##设置超时时间
+            MyDriver.__instance = driver;
+
         return cls.__instance
 
     def __init__(self):
@@ -27,7 +32,9 @@ service_args = []
 service_args.append('--load-images=no')  ##关闭图片加载
 service_args.append('--disk-cache=yes')  ##开启缓存
 service_args.append('--ignore-ssl-errors=true')  ##忽略https错误
-myDrivers = [webdriver.PhantomJS(service_args=service_args),
-             webdriver.PhantomJS(service_args=service_args),
-             webdriver.PhantomJS(service_args=service_args),
-             webdriver.PhantomJS(service_args=service_args)]
+myDrivers = [];
+# myDrivers = [webdriver.PhantomJS(service_args=service_args),
+#              webdriver.PhantomJS(service_args=service_args)]
+# for i in range(0, len(myDrivers)):
+#     myDrivers[i].implicitly_wait(10)  ##设置隐式等待
+#     myDrivers[i].set_page_load_timeout(10)  ##设置超时时间

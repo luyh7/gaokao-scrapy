@@ -2,6 +2,8 @@
 from scrapy.spiders import CrawlSpider
 from scrapy.http import Request
 import config
+import globalvar
+import time
 class MajorScoreSpider(CrawlSpider):
     name = "majorscore"
     allowed_domains = ["gkcx.eol.cn"]
@@ -63,6 +65,9 @@ class MajorScoreSpider(CrawlSpider):
                 break
             tr += '\n'
             trs.append(tr)
-        # print response.url
+        # globalvar.pagesScrapy += 1
+        # if globalvar.pagesScrapy % int(config.MAX_MAJOR_SCORE_PAGES / 10000) == 0:
+        #     localtime = time.asctime(time.localtime(time.time()))
+        #     print("%s  Crawling... %d / %d" % (localtime, globalvar.pagesScrapy, config.MAX_MAJOR_SCORE_PAGES));
         with open(filename, 'a+') as fout:
             fout.writelines(trs)
