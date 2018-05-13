@@ -1,6 +1,7 @@
 #coding:utf-8
 MAX_SCHOOL_PAGES = 100  # 学校列表页面数量
-MAX_MAJOR_SCORE_PAGES = 200000  # 专业平均分页面数量
+MAX_MAJOR_SCORE_INSECTS = 1000  # 专业平均分页面爬虫程序数量
+MAX_MAJOR_SCORE_PAGES = 200  # 专业平均分页面数量（一个程序）
 MAX_MAJOR_DETAIL_PAGES = 4000  # 学校信息页面数量（爬取专业最高低分的入口）
 TD_OF_SCHOOL = 5
 TD_OF_MAJOR_SCORE = 7

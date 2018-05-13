@@ -2,7 +2,7 @@
 import time
 from scrapy.http import HtmlResponse
 from spiders.MyDriver import MyDriver
-from spiders.MyDriver import myDrivers
+from selenium import webdriver
 from spiders import globalvar
 from spiders import config
 class PhantomJSMiddleware(object):
@@ -23,16 +23,18 @@ class PhantomJSMiddleware(object):
         if request.meta.has_key('SinglePage') and request.meta['SinglePage'] == True:
             # driver = MyDriver()
             # driver = myDrivers[int(int(request.url[len(request.url)-1]) % len(myDrivers))]
-
-            content = cls.get_page(request.url)
             globalvar.pagesDone += 1
-            if globalvar.pagesDone % int(config.MAX_MAJOR_SCORE_PAGES / 10000) == 0:
+            content = cls.get_page(request.url)
+            # print globalvar.pagesDone
+            if globalvar.pagesDone % int(config.MAX_MAJOR_SCORE_PAGES / 10) == 0:
                 localtime = time.asctime(time.localtime(time.time()))
                 print("%s  Processing... %d / %d" % (localtime, globalvar.pagesDone, config.MAX_MAJOR_SCORE_PAGES));
             return HtmlResponse(request.url, encoding='utf-8', body=content, request=request)
 
     @classmethod
     def get_page(cls, url):
+        # if globalvar.pagesDone % 500 == 1:
+        #     MyDriver.restart_driver()
         driver = MyDriver() # 获取浏览器单例
         retry_count = 5
         while retry_count > 0:
@@ -40,6 +42,9 @@ class PhantomJSMiddleware(object):
                 driver.get("about:blank")  # 避免读到脏数据
                 driver.get(url)
                 page = driver.page_source.encode('utf-8')
+                if globalvar.pagesDone % config.MAX_MAJOR_SCORE_PAGES == 0:
+                    driver.quit()
+                    print "A driver quit."
                 return page
             except Exception as e:
                 retry_count -= 1
