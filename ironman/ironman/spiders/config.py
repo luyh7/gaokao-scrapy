@@ -2,7 +2,8 @@
 MAX_SCHOOL_PAGES = 100  # 学校列表页面数量
 MAX_MAJOR_SCORE_INSECTS = 1000  # 专业平均分页面爬虫程序数量
 MAX_MAJOR_SCORE_PAGES = 200  # 专业平均分页面数量（一个程序）
-MAX_MAJOR_DETAIL_PAGES = 4000  # 学校信息页面数量（爬取专业最高低分的入口）
+MAX_MAJOR_DETAIL_INSECTS = 4000
+MAX_MAJOR_DETAIL_PAGES = 1  # 学校信息页面数量（爬取专业最高低分的入口）
 TD_OF_SCHOOL = 5
 TD_OF_MAJOR_SCORE = 7
 MAX_ROWS = 50
@@ -44,7 +45,7 @@ MAJOR_DETAIL_URLS = []
 for i in range(0, MAX_MAJOR_DETAIL_PAGES):
     MAJOR_DETAIL_URLS.append(MAJOR_DETAIL_URLS_PATTERN % i)
 
-X_QUERY_MAJOR_SCHOOL_NAME = "//p/span";
+X_QUERY_MAJOR_SCHOOL_NAME = "//p/span/text()";
 
 X_QUERY_MAJOR_DETAIL = [
     "", #占位符
