@@ -92,5 +92,6 @@ PROVINCE_CODE_2_PROVINCE = {
 
 STATUS_CODE_2_STATUS = {
     '10034': '文科',
-    '10035': '理科'
+    '10035': '理科',
+    '10093': '体育类'
 }

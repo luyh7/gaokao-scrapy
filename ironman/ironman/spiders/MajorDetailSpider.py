@@ -56,8 +56,10 @@ class MajorDetailSpider(CrawlSpider):
         provinCode = url[url.rfind('_') + 1:url.rfind('.')]
         province = config.PROVINCE_CODE_2_PROVINCE[provinCode].decode('utf-8')
         statusCode = url.split('/')[-2]
-        status = config.STATUS_CODE_2_STATUS[statusCode].decode('utf-8')
-        linePrefix = schoolName + '|' + province + '|' + status + '|'
+        status = statusCode
+        if statusCode == '10093'or statusCode == '10034' or statusCode == '10035':
+            status = config.STATUS_CODE_2_STATUS[statusCode]
+        linePrefix = schoolName + '|' + province + '|' + status.decode('utf-8') + '|'
         for i in range(1, config.MAX_ROWS+1):
             tr = ''
             for j in range(1, config.TD_OF_MAJOR_DETAIL+1):
