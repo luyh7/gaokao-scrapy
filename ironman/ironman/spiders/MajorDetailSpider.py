@@ -55,7 +55,9 @@ class MajorDetailSpider(CrawlSpider):
         schoolName = sel.xpath(config.X_QUERY_MAJOR_SCHOOL_NAME).extract()[0]
         provinCode = url[url.rfind('_') + 1:url.rfind('.')]
         province = config.PROVINCE_CODE_2_PROVINCE[provinCode].decode('utf-8')
-        linePrefix = schoolName + '|' + province + '|'
+        statusCode = url.split('/')[-2]
+        status = config.STATUS_CODE_2_STATUS[statusCode].decode('utf-8')
+        linePrefix = schoolName + '|' + province + '|' + status + '|'
         for i in range(1, config.MAX_ROWS+1):
             tr = ''
             for j in range(1, config.TD_OF_MAJOR_DETAIL+1):
