@@ -55,7 +55,8 @@ CONCURRENT_REQUESTS_PER_DOMAIN = 16
 DOWNLOADER_MIDDLEWARES = {
    # 'ironman.middlewares.IronmanDownloaderMiddleware': 543,
     'ironman.JSMiddleware.PhantomJSMiddleware': 100,
-    'ironman.MajorDetailMiddleware.MajorDetailMiddleware': 200
+    'ironman.MajorDetailMiddleware.MajorDetailMiddleware': 200,
+    'ironman.SchoolDetailMiddleware.SchoolDetailMiddleware': 1
 }
 
 # Enable or disable extensions

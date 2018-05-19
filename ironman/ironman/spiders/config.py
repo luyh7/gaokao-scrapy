@@ -6,6 +6,7 @@ MAX_MAJOR_DETAIL_INSECTS = 4000
 MAX_MAJOR_DETAIL_PAGES = 1  # 学校信息页面数量（爬取专业最高低分的入口）
 TD_OF_SCHOOL = 5
 TD_OF_MAJOR_SCORE = 7
+
 MAX_ROWS = 50
 X_QUERY_SCHOOL = [
     "", #占位符
@@ -57,6 +58,18 @@ X_QUERY_MAJOR_DETAIL = [
     "//tr[%d]/td[%d]/text()",
 ]
 
+SCHOOL_DETAIL_URLS_PATTERN = "http://gkcx.eol.cn/schoolhtm/schoolAreaPoint/%d/schoolAreaPoint.htm"
+TD_OF_SCHOOL_DETAIL = 6
+X_QUERY_SCHOOL_DETAIL = [
+    "", #占位符
+    "//tr[%d]/td[%d]/text()" , #学校名
+    "//tr[%d]/td[%d]/text()",
+    "//tr[%d]/td[%d]/text()",
+    "//tr[%d]/td[%d]/text()",
+    "//tr[%d]/td[%d]/text()",
+    "//tr[%d]/td[%d]/text()",
+]
+
 PROVINCE_CODE_2_PROVINCE = {
     '10008': '安徽',
     '10003': '北京',
@@ -93,5 +106,29 @@ PROVINCE_CODE_2_PROVINCE = {
 STATUS_CODE_2_STATUS = {
     '10034': '文科',
     '10035': '理科',
-    '10093': '体育类'
+    '10093': '体育类',
+    '10090': '综合类'
 }
+
+TD_OF_ONE_SCORE_MAIN = 3
+X_QUERY_ONE_SCORE_MAIN = [
+    "", #占位符
+    "//tr[%d]/td[%d]/p/a/strong/span/text()" , #省份
+    "//tr[%d]/td[%d]/p/a/text()" ,
+    "//tr[%d]/td[%d]/p/a/text()",
+]
+
+TD_OF_ONE_SCORE = 10
+X_QUERY_ONE_SCORE = [
+    "", #占位符
+    "//tr[%d]/td[%d]/text()" , #省份
+    "//tr[%d]/td[%d]/text()" ,
+    "//tr[%d]/td[%d]/text()" ,
+    "//tr[%d]/td[%d]/text()" ,
+    "//tr[%d]/td[%d]/text()" ,
+    "//tr[%d]/td[%d]/text()" ,
+    "//tr[%d]/td[%d]/text()" ,
+    "//tr[%d]/td[%d]/text()" ,
+    "//tr[%d]/td[%d]/text()" ,
+    "//tr[%d]/td[%d]/text()"
+]

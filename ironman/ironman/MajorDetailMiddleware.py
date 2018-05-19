@@ -22,8 +22,12 @@ class MajorDetailMiddleware(object):
                 # print("retry for %d times: %s" % (5 - retry_count, request.url))
             # 点击按钮选择省份
             if not globalvar.runJustOne:
-                driver.find_element_by_xpath("//div/div[2]/div").click()
-                globalvar.runJustOne = True
+                try:
+                    driver.find_element_by_xpath("//div/div[2]/div").click()
+                    globalvar.runJustOne = True
+                except Exception as e:
+                    pass
+
             content = driver.page_source.encode('utf-8')
             globalvar.pagesScrapy += 1
             # if globalvar.pagesScrapy % int(config.MAX_MAJOR_DETAIL_PAGES / 10) == 0:
